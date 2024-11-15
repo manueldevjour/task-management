@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import Widget from '../../../components/Widget/Widget';
-import useFetchTasks from '../../../hooks/useFetchTasks';
-
-vi.mock('../../../hooks/useFetchTasks');
+import * as useFetchTasksHook from '../../../hooks/useFetchTasks';
+import { vi } from 'vitest';
 
 describe('Widget Component', () => {
   beforeEach(() => {
-    useFetchTasks.mockReturnValue({
+    vi.spyOn(useFetchTasksHook, 'default').mockReturnValue({
       tasks: [
         {
           name: 'Category 1',
@@ -35,7 +34,7 @@ describe('Widget Component', () => {
   });
 
   it('displays an error message when there is an error', () => {
-    useFetchTasks.mockReturnValueOnce({
+    vi.spyOn(useFetchTasksHook, 'default').mockReturnValueOnce({
       tasks: [],
       setTasks: vi.fn(),
       error: 'Error fetching tasks'
