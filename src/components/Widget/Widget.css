@@ -1,0 +1,157 @@
+.error {
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #c2001a;
+  background-color: #d06f7c;
+  color: #fff;
+}
+
+.widget__category {
+  padding: 1.5rem 1rem;
+}
+
+.widget__category:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.widget__category-info {
+  display: flex;
+}
+
+.widget__category-task-list {
+  padding: 2rem 0 0 0.75rem;
+}
+
+.widget__category--complete h2 {
+  color: #07bc9c;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details[open] > summary .toggle-text::after {
+  content: 'Hide';
+}
+
+details:not([open]) > summary .toggle-text::after {
+  content: 'Show';
+}
+
+details > summary .open-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.toggle-icon {
+  width: 0.75rem;
+}
+
+details[open] > summary .open-info .toggle-icon {
+  rotate: 180deg;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+details.widget__category--complete {
+  summary {
+    color: #07bc9c;
+  }
+}
+
+.widget__task {
+  color: #000;
+}
+
+.widget__task:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.icon {
+  margin-right: 8px;
+  width: 16px;
+}
+
+.toggle-text {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.checkmark {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  position: relative;
+  margin-right: 5px;
+  background-color: white;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: #07bc9c;
+  border: 1px solid #07bc9c;
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .widget__category {
+    padding: 1rem;
+  }
+
+  .widget__category-task-list {
+    padding: 1rem 0;
+  }
+
+  .widget__task {
+    font-weight: normal;
+  }
+
+  .icon {
+    width: 14px;
+  }
+
+  .toggle-icon {
+    width: 1rem;
+  }
+
+  .error {
+    font-size: 0.9rem;
+  }
+}
