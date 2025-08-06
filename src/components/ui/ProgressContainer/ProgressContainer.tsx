@@ -14,7 +14,7 @@ const ProgressContainer: React.FC<ProgressContainerProps> = ({ progress }) => {
       aria-valuemin={0}
       aria-valuemax={100}
     >
-      <div className="progress-bar" style={{ width: `${progress}%` }}>
+      <div className="progress-bar" style={{ width: `${progress < 5 ? '7' : progress}%` }}>
         <span className="progress-text">{progress}%</span>
       </div>
     </div>
